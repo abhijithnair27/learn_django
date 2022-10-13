@@ -12,6 +12,11 @@
             <td>EMP code</td>
             <td>Mobile number</td>
             <td>Position</td>
+            <td>
+                <a href="{% url 'employee_insert' %}" class="btn btn-outline-success">
+                    <i class="fas fa-plus"></i>ADD NEW
+                </a>
+            </td>
         </tr>
     </thead>
     <tbody>
@@ -24,6 +29,11 @@
             <td>{{employee.emp_code}}</td>
             <td>{{employee.mobile}}</td>
             <td>{{employee.position}}</td>
+            <td>
+                <a href="{% url 'employee_update' employee.id %}" class="btn text-secondary px-0">
+                    <i class="far fa-edit fa-lg"></i>
+                </a>
+            </td>
         </tr>
         {% endfor %}
 
