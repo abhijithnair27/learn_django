@@ -1,6 +1,34 @@
 {% extends "employee_register/base.html" %}
 
 {% block content %}
-<p>We'll show</p>
+
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Father Name</td>
+            <td>Address</td>
+            <td>EMP code</td>
+            <td>Mobile number</td>
+            <td>Position</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for employee in employee_list %}
+        <tr>
+            <td>{{employee.firstname}}</td>
+            <td>{{employee.lastname}}</td>
+            <td>{{employee.fathername}}</td>
+            <td>{{employee.address}}</td>
+            <td>{{employee.emp_code}}</td>
+            <td>{{employee.mobile}}</td>
+            <td>{{employee.position}}</td>
+        </tr>
+        {% endfor %}
+
+
+    </tbody>
+</table>
 
 {% endblock content %}
