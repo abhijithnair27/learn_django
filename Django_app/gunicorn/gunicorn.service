@@ -1,0 +1,13 @@
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/learn_django/Django_app
+ExecStart=/home/ubuntu/env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/ubuntu/learn_django/Django_app/Django_app/Django_app.sock Django_app.wsgi:application
+
+       
+[Install]
+WantedBy=multi-user.target
